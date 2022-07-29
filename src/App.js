@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+export default class Beterraba extends Component{
+  state= {
+    cadastro: [
+{nome:'Isaque',idade:24,time:'Flamengo',signo:'capricórnio',estado:'RJ',comidaFavorita:'bife com batata frita',hobby:'futebol' }
+    ]
+  }
+
+        render() {
+return(
+  <nav>
+    {this.state.cadastro.map((item) =>(
+<ul>
+  <li>Clique aqui para ver o perfil do {item.nome}</li>
+  <li>Ele tem {item.idade}anos de idade e torce para o {item.time}</li>
+  <li>E o seu signo é {item.signo} mora no estado do {item.estado}</li>
+  <li>Sua comida favotira é {item.comidaFavorita}</li>
+</ul>
+    ))}
+  </nav>
+)
+    }
+  }
